@@ -40,6 +40,7 @@ namespace DataAccessLayer
         {
             using (var context = new ProjectManagerContext())
             {
+                oUser = context.Users.FirstOrDefault(x => x.User_ID == oUser.User_ID);
                 context.Users.Remove(oUser);
                 context.SaveChanges();
                 return true;
